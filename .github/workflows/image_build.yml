@@ -1,0 +1,11 @@
+name: build-and-deploy
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  img-build:
+    uses: hotosm/gh-workflows/.github/workflows/image_build.yml@3.5.0
+    with:
+      image_name: ghcr.io/${{ github.repository }}
